@@ -26,8 +26,10 @@
     margin-left: 35px;
 }
 
-.header-data__info-span {
-    margin-right: 50px;
+.header-data__info {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
 }
 
 .header__icon {
