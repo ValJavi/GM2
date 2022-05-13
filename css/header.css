@@ -6,16 +6,16 @@
 
 .header {
     padding: 35px 0 70px 0;
-    width: 100%;
+    width: 90%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 5%;    
 }
 
 .header-data {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
 .header-data * {
@@ -169,16 +169,6 @@
         transform: scale(2.5);
         color: var(--color-1);
     }
-
-    /* .header__menu--mobile-close-x::before {
-        content: "   ";
-        display: block;
-        width: 15px;
-        height: 15px;
-        background-color: red;
-        border: blue;
-        
-    } */
  
     .header__menu--mobile-item {
         display: block;
