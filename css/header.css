@@ -159,14 +159,15 @@
         position: absolute;
         top: 35px;
         right: 35px;
-        width: 35px;
-        height: 35px;
-        background-color: var(--color-1);
-        color: var(--color-5);
-        border-radius: 50%;
         border-style: none;
-        font-weight: 800;
-        font-size: large;
+    }
+
+    .fa-circle-xmark {
+        /* position: absolute;
+        top: 35px;
+        right: 35px; */
+        transform: scale(2.5);
+        color: var(--color-1);
     }
 
     /* .header__menu--mobile-close-x::before {
