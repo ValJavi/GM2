@@ -1,0 +1,159 @@
+/* 
+**************************************************
+---------------     Resets    --------------------
+**************************************************
+*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* 
+**************************************************
+---------------    Variables   -------------------
+**************************************************
+*/
+
+:root {
+    --color-1: #5956E9;
+    --color-2: #232233;
+    --color-3: #6C6C72;
+    --color-4: #7572FF;
+    --color-5: #FFFFFF;
+}
+
+
+/* 
+**************************************************
+-------------    Typographies   ------------------
+**************************************************
+*/
+
+
+.h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48.83px;
+    line-height: 63px;
+    text-transform: uppercase;
+}
+
+.h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 31.25px;
+    line-height: 47px;
+    text-transform: uppercase;
+}
+
+.h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+.h4 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+
+/* 
+**************************************************
+---------------     General    -------------------
+**************************************************
+*/
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 135px;
+}
+
+ul {
+    list-style: none;
+}
+
+.grow:hover {
+    transform: scale(1.6);
+    transition: all;
+    transition-duration: 0.2s;
+}
+
+.social__line {
+    width: 1px;
+    height: 25px;
+    background-color: var(--color-3);
+}
+
+
+/* 
+**************************************************
+----------     Responsive - Mobile     -----------
+**************************************************
+*/
+
+
+@media (max-width: 767px) {
+
+    .container {
+        max-width: 375px;
+        padding: 0 15px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .h1--mobile{
+        font-weight: 700;
+        font-size: 31.25px;
+        line-height: 47px;
+    }
+
+    .h2--mobile {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 38px;
+    }
+
+    .h3--mobile {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .h4--mobile {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .p--small {
+        font-weight: 300;
+        font-size: 12.8px;
+        line-height: 13px;
+    }
+
+}
