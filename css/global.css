@@ -110,6 +110,51 @@ ul {
 
 /* 
 **************************************************
+----------     Responsive - Tablet     -----------
+**************************************************
+*/
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        max-width: 770px;
+        padding: 0 40px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .h1--tablet{
+        font-weight: 700;
+        font-size: 31.25px;
+        line-height: 47px;
+    }
+
+    .h2--tablet {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .h3--tablet {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .p--small {
+        font-weight: 300;
+        font-size: 12.8px;
+        line-height: 13px;
+    }
+
+}
+
+
+/* 
+**************************************************
 ----------     Responsive - Mobile     -----------
 **************************************************
 */
