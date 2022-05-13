@@ -285,8 +285,8 @@
 
 .creative__img {
     position: absolute;
-    top: 11px;
-    left: 11px;
+    top: 10px;
+    left: 10px;
 }
 
 .creative__img--container {
@@ -296,6 +296,110 @@
 
 .creative-section {
     padding: 120px 0 150px;
+}
+
+/* 
+**************************************************
+----------     Responsive - Tablet     -----------
+**************************************************
+*/
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+/* 
+**************************************************
+---------------      Hero     -------------------
+**************************************************
+*/   
+   
+   
+    .hero-article__card {
+        padding: 15px;
+    }
+    
+    .hero-article__square {
+        height: 120%;
+        bottom: -10%;
+    }
+
+    .hero__store-icon {
+        width: 110px;
+        height: 35px;
+    }
+
+    .hero__h1 {
+        margin-bottom: 5px;
+    }
+
+    .hero__p {
+        margin-bottom: 20px;
+    }
+
+
+/* 
+**************************************************
+---------------      About     -------------------
+**************************************************
+*/
+
+
+    .about-main__img {
+        width: 238px;
+        height: 324px;
+    }
+
+    .about-main__card {
+        padding: 15px;
+    }
+
+    .about-main__card:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .about-main__card-title {
+        margin-bottom: 3px;
+    }
+
+
+/* 
+**************************************************
+---------------    Features    -------------------
+**************************************************
+*/
+
+    .feat__img {
+        width: 220px;
+        height: 480px;
+    }
+
+    .feat__elem {
+        min-height: 180px;
+    }
+
+/* 
+**************************************************
+---------------    Creative    -------------------
+**************************************************
+*/
+
+    .creative__card--container {
+        gap: 25px;
+    }
+
+    .creative__img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .creative__img--border {
+        width: 180px;
+        height: 180px;
+    }
+
+
+
 }
 
 
@@ -351,6 +455,7 @@
 
     .hero__store-icon {
         width: 110px;
+        height: 35px;
     }
 
     

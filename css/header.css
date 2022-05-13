@@ -26,8 +26,10 @@
     margin-left: 35px;
 }
 
-.header-data__info-span {
-    margin-right: 50px;
+.header-data__info {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
 }
 
 .header__icon {
@@ -83,6 +85,82 @@
 
 .header__menu--mobile {
     display: none;
+}
+
+/* 
+**************************************************
+----------     Responsive - Tablet     -----------
+**************************************************
+*/
+
+
+@media (min-width: 767px) and (max-width: 991px) {
+
+    .header-data__info {
+        width: 55%;
+    }
+
+    .header__menu {
+        
+        padding: 5px;
+        position: relative;
+    }
+
+    .header__menu-burger--mobile {
+        display: block;
+        margin: 5px;
+        border-style: none;
+        background-color: var(--color-5);
+    }
+
+    .header__menu-burger-line--mobile {
+        width: 18px;
+        height: 2px;
+        background-color: var(--color-2);
+        margin:4px auto 4px
+    }
+
+    .header__menu-item {
+        display: none;
+    }   
+
+    .header-menu__logo--container {
+        position: absolute;
+        left: calc(50% - 100px);
+        
+    }
+
+    .header__menu--mobile{
+        display: none;
+        width: 260px;
+        height: 350px;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: var(--color-5);
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .header__menu--mobile-close {
+        position: absolute;
+        top: 35px;
+        right: 35px;
+        border-style: none;
+    }
+
+    .fa-circle-xmark {
+        transform: scale(2.5);
+        color: var(--color-1);
+    }
+ 
+    .header__menu--mobile-item {
+        display: block;
+        color: var(--color-2);
+        margin-bottom: 25px;
+    }
+ 
 }
 
 
