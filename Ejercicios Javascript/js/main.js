@@ -111,10 +111,69 @@ function puedeSerPalindromo(string) {
                 
             }
         }
+/* Ejercicio 4 */
+
+function convertirARomano(numero){
+
+    let num = numero.toString().split("").map(num => Number(num))
+    let resultado = "";
+
+    if (num.length > 4 || (num.length === 4 && num[0] > 3)) {
+        return resultado = "El numero no puede ser mayor a 3999"
+    }
+
+    else if  (num.length === 4) {
+        resultado += "M".repeat(num[0]);
+        resultado += organizarNumerosRomanos(num[1], "C", "D", "M");
+        resultado += organizarNumerosRomanos(num[2], "X", "L", "C");
+        resultado += organizarNumerosRomanos(num[3], "I", "V", "X");
+    } 
+
+    else if (num.length === 3) {
+        resultado += organizarNumerosRomanos(num[0], "C", "D", "M");
+        resultado += organizarNumerosRomanos(num[1], "X", "L", "C");
+        resultado += organizarNumerosRomanos(num[2], "I", "V", "X");
     }
     return stringArray.length > 1 ? false : true;    
+
+    else if (num.length === 2) {
+        resultado += organizarNumerosRomanos(num[0], "X", "L", "C");
+        resultado += organizarNumerosRomanos(num[1], "I", "V", "X");
+    }
+
+    else if (num.length === 1) {
+        resultado += organizarNumerosRomanos(num[0], "I", "V", "X");
+    }
+
+
+    
+    function organizarNumerosRomanos(numero, unidad, mitad, decena){
+        
+        let resultado = "";
+    
+        if (numero > 0 && numero <= 3){
+            resultado = unidad.repeat(numero);
+        } 
+        else if (numero === 4) {
+            resultado = unidad + mitad;
+        }
+        else if (numero === 5) {
+            resultado = mitad;
+        }
+        else if (numero > 5 && numero < 9) {
+            resultado = mitad + unidad.repeat(numero - 5);
+        }
+        else if (numero === 9) {
+            resultado = unidad + decena;
+        }
+        return resultado;
+    }
+
+    return resultado;
+
 }
 
 //console.log(puedeSerPalindromo(prompt("Ingresa un texto")))
+//console.log(convertirARomano(3999))
 
 
