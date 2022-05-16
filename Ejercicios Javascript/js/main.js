@@ -92,25 +92,33 @@ function esPalindromo(string){
             resultado = false; 
         }
     }
-    return resultado === false ? false : true;
+
+    if (resultado !== false){
+        return true;
+    }
+
+    else {
+        let stringArray = string.split("");
+    
+        for (let i = 0; i < stringArray.length; i++){
+            for (let j = i+1; j < stringArray.length; j++){
+                
+                if (stringArray[i] === stringArray[j]) {
+                    stringArray.splice(j, 1);
+                    stringArray.splice(i, 1);
+                    i = 0;
+                    j = 0;
+                    
+                }
+            }
+        }
+        return stringArray.length > 1 ? false : true;
+    }
 }
 
 //console.log(esPalindromo(prompt("Ingresa un texto")));
 
-function puedeSerPalindromo(string) {
-    let stringArray = string.split("");
-    
-    for (let i = 0; i < stringArray.length; i++){
-        for (let j = i+1; j < stringArray.length; j++){
-            
-            if (stringArray[i] === stringArray[j]) {
-                stringArray.splice(j, 1);
-                stringArray.splice(i, 1);
-                i = 0;
-                j = 0;
-                
-            }
-        }
+
 /* Ejercicio 4 */
 
 function convertirARomano(numero){
@@ -134,7 +142,6 @@ function convertirARomano(numero){
         resultado += organizarNumerosRomanos(num[1], "X", "L", "C");
         resultado += organizarNumerosRomanos(num[2], "I", "V", "X");
     }
-    return stringArray.length > 1 ? false : true;    
 
     else if (num.length === 2) {
         resultado += organizarNumerosRomanos(num[0], "X", "L", "C");
@@ -173,7 +180,6 @@ function convertirARomano(numero){
 
 }
 
-//console.log(puedeSerPalindromo(prompt("Ingresa un texto")))
 //console.log(convertirARomano(3999))
 
 
