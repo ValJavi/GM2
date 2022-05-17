@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+}
+
+.container {
+    width: 70%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+}
+
+.form__btn-submit {
+    width: 100px;
+    margin: 50px auto;
+}
+
+.form__select-title {
+    margin-bottom: 20px;
+}
+
+.form__select {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.form__input {
+    width: 100%;
+    height: 100px;
+}
+
+.resultado {
+    width: 100%;
+    min-height: 150px;
+}
