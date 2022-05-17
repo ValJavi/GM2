@@ -1,3 +1,124 @@
+const submitBtn = document.querySelector('#submit-btn');
+const form = document.querySelector('#form')
+const listaEjercicios = document.querySelector('#ejercicio');
+const input = document.querySelector('#input');
+const inputContainer = document.querySelector('#form__input-container');
+const instrucciones = document.querySelector('#instrucciones');
+const resultado = document.querySelector('#resultado');
+
+
+
+
+listaEjercicios.addEventListener("change", function() {
+    if (listaEjercicios.value === "suma-resta") {
+        
+        let array = [];
+        instrucciones.innerHTML = "Ingresa uno a uno los numeros que deseas agregar al array, dando click al boton Agregar";
+        
+        const agregar = document.createElement('button');
+        agregar.type = 'button';
+        agregar.id = "agregar"
+        agregar.innerHTML = 'Agregar';
+        inputContainer.appendChild(agregar);
+              
+        const input2Container = document.querySelector('#input-2');
+        input2Container.style = "margin: 20px 0"
+        const input2 = document.createElement('input');
+        input2.id = "input2";
+        input2.style = "width: 100%";
+        const input2Instrucciones = document.createElement('p');
+        input2Instrucciones.textContent = "Ingresa el numero sobre el que deseas hacer el calculo";
+        input2Container.appendChild(input2Instrucciones);
+        input2Container.appendChild(input2);
+            
+
+        agregar.addEventListener("click", function() {
+            array.push(input.value);
+            input.value = "";
+        });  
+        
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            resultado.textContent = `
+            Resultado de la suma:
+            ${sumarAlArray(array, Number(input2.value))}
+            
+            Resultado de la resta: 
+            ${restarAlArray(array, Number(input2.value))}
+            `
+        })    
+
+        listaEjercicios.addEventListener("change", function(){
+            inputContainer.removeChild(agregar);
+            input2Container.removeChild(input2);
+            input2Container.removeChild(input2Instrucciones);
+            resultado.textContent = "";
+            form.reset();
+        })
+    }
+
+    else if (listaEjercicios.value === "par-pareja") {
+        let array = [];
+        instrucciones.innerHTML = "Ingresa uno a uno los numeros que deseas agregar al array, dando click al boton Agregar";
+
+        const agregar = document.createElement('button');
+            agregar.type = 'button';
+            agregar.id = "agregar"
+            agregar.innerHTML = 'Agregar';
+            inputContainer.appendChild(agregar);      
+
+
+        agregar.addEventListener("click", function() {
+            array.push(Number(input.value));
+            input.value = "";
+        });  
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            hayParOPareja(array) === true ? resultado.textContent = "En el array hay par y pareja" : 
+            resultado.textContent ="En el array no hay par y pareja";
+        })   
+        
+        listaEjercicios.addEventListener("change", function(){
+            inputContainer.removeChild(agregar);
+            resultado.textContent = "";
+            form.reset();
+        })
+    }
+
+    else if (listaEjercicios.value === "palindromo") {
+        instrucciones.innerHTML = "Ingresa un texto para verificar si es o si puede ser un palindromo";     
+
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+            esPalindromo(input.value) === true ? resultado.textContent = "El texto ingresado es o podria ser un Palindromo" :
+            resultado.textContent = "El texto ingresado no es ni puede ser un Palindromo";
+        })
+
+        listaEjercicios.addEventListener("change", function(){
+            resultado.textContent = "";
+            form.reset();
+        })
+    }
+
+    else if (listaEjercicios.value === "romanos") {
+        instrucciones.innerHTML = "Ingresa un numero para obtener el mismo en Numeros Romanos. El numero no podra ser mayor a 3999.";
+
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+            resultado.textContent = convertirARomano(Number(input.value))
+        })
+
+        listaEjercicios.addEventListener("change", function(){
+            resultado.textContent = "";
+            form.reset();
+        })
+    }
+})
+
+
+
+
 /* Ejercicio 1 */
 
 function sumarAlArray(array, numero){
@@ -24,21 +145,6 @@ function restarAlArray(array, numero){
     return arrayToNumber;    
 }
 
-
-let array1 = [1,2,3];
-let array2 = [1,9];
-let array3 = [];
-let array4 = [2,0];
-let array5 = [3];
-
-
-//console.log(sumarAlArray(array1, 3));
-//console.log(sumarAlArray(array2, 2));
-//console.log(sumarAlArray(array3, 4));
-
-//console.log(restarAlArray(array1, 4));
-//console.log(restarAlArray(array4, 2));
-//console.log(restarAlArray(array5, 1067));
 
 
 
@@ -77,10 +183,6 @@ function hayParOPareja(array) {
 
 
 
-//let array = [1, 3, 4, 6, 3, 5]
-//console.log(hayParOPareja(array))
-
-
 /* Ejercicio 3 */
 
 
@@ -116,7 +218,6 @@ function esPalindromo(string){
     }
 }
 
-//console.log(esPalindromo(prompt("Ingresa un texto")));
 
 
 /* Ejercicio 4 */
@@ -179,7 +280,3 @@ function convertirARomano(numero){
     return resultado;
 
 }
-
-//console.log(convertirARomano(3999))
-
-
