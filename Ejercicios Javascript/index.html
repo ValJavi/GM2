@@ -5,10 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>Ejercicios de JS</h1>
-    
+    <main class="container">
+        <h1>Ejercicios de JS</h1>
+        
+        <form id="form">
+            <h2 class="form__select-title">Selecciona un ejercicio</h2>
+            <select name="ejercicio" id="ejercicio" class="form__select">
+                <option value="default">Elije una opcion...</option>
+                <option value="suma-resta" id="ejercicio1">Suma y Resta</option>
+                <option value="par-pareja" id="ejercicio2">Par o pareja</option>
+                <option value="palindromo" id="ejercicio3">Palindromo</option>
+                <option value="romanos" id="ejercicio4">Numeros Romanos</option>
+            </select>
+
+            <div class="form__input-container" id="form__input-container">
+                <p id="instrucciones"></p>
+                <input type="text" name="input" id="input" class="form__input">
+            </div>
+
+            <div id="input-2"></div>
+
+            <button type="submit" class="form__btn-submit" id="submit-btn">Enviar</button>
+        </form>    
+
+        <h2>Resultado</h2>
+        <textarea name="resultado" id="resultado" class="resultado"></textarea>
+    </main>
 
     <script src="./js/main.js"></script>
 </body>
