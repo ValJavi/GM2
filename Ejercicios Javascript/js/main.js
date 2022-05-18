@@ -7,19 +7,24 @@ const instrucciones = document.querySelector('#instrucciones');
 const resultado = document.querySelector('#resultado');
 
 
+function filtrarArray(string){
+    let array = string.split("");
+    let newArray = [];
+    for (elem of array) {
+        elem = parseInt(elem);
 
+        if (!isNaN(elem)) {
+            newArray.push(elem)
+        }
+    }
+    return newArray;
+}
 
 listaEjercicios.addEventListener("change", function() {
     if (listaEjercicios.value === "suma-resta") {
         
         let array = [];
-        instrucciones.innerHTML = "Ingresa uno a uno los numeros que deseas agregar al array, dando click al boton Agregar";
-        
-        const agregar = document.createElement('button');
-        agregar.type = 'button';
-        agregar.id = "agregar"
-        agregar.innerHTML = 'Agregar';
-        inputContainer.appendChild(agregar);
+        instrucciones.innerHTML = "Ingresa un array";
               
         const input2Container = document.querySelector('#input-2');
         input2Container.style = "margin: 20px 0"
@@ -30,15 +35,10 @@ listaEjercicios.addEventListener("change", function() {
         input2Instrucciones.textContent = "Ingresa el numero sobre el que deseas hacer el calculo";
         input2Container.appendChild(input2Instrucciones);
         input2Container.appendChild(input2);
-            
-
-        agregar.addEventListener("click", function() {
-            array.push(input.value);
-            input.value = "";
-        });  
         
         form.addEventListener("submit", function(event) {
             event.preventDefault();
+            array = filtrarArray(input.value);
             resultado.textContent = `
             Resultado de la suma:
             ${sumarAlArray(array, Number(input2.value))}
@@ -49,7 +49,6 @@ listaEjercicios.addEventListener("change", function() {
         })    
 
         listaEjercicios.addEventListener("change", function(){
-            inputContainer.removeChild(agregar);
             input2Container.removeChild(input2);
             input2Container.removeChild(input2Instrucciones);
             resultado.textContent = "";
@@ -59,28 +58,16 @@ listaEjercicios.addEventListener("change", function() {
 
     else if (listaEjercicios.value === "par-pareja") {
         let array = [];
-        instrucciones.innerHTML = "Ingresa uno a uno los numeros que deseas agregar al array, dando click al boton Agregar";
-
-        const agregar = document.createElement('button');
-            agregar.type = 'button';
-            agregar.id = "agregar"
-            agregar.innerHTML = 'Agregar';
-            inputContainer.appendChild(agregar);      
-
-
-        agregar.addEventListener("click", function() {
-            array.push(Number(input.value));
-            input.value = "";
-        });  
+        instrucciones.innerHTML = "Ingresa un array";
 
         form.addEventListener("submit", function(event) {
             event.preventDefault();
+            array = filtrarArray(input.value);
             hayParOPareja(array) === true ? resultado.textContent = "En el array hay par y pareja" : 
             resultado.textContent ="En el array no hay par y pareja";
         })   
         
         listaEjercicios.addEventListener("change", function(){
-            inputContainer.removeChild(agregar);
             resultado.textContent = "";
             form.reset();
         })
@@ -179,7 +166,6 @@ function hayParOPareja(array) {
         return false;
     }
 }
-
 
 
 
