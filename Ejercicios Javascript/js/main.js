@@ -53,7 +53,9 @@ listaEjercicios.addEventListener("change", function() {
                 input2Container.removeChild(input2Container.firstChild);
             }
             resultado.textContent = "";
+            let val = listaEjercicios.value;
             form.reset();
+            listaEjercicios.value = val;
         })
     }
 
@@ -70,7 +72,9 @@ listaEjercicios.addEventListener("change", function() {
         
         listaEjercicios.addEventListener("change", function(){
             resultado.textContent = "";
+            let val = listaEjercicios.value;
             form.reset();
+            listaEjercicios.value = val;
         })
     }
 
@@ -85,7 +89,9 @@ listaEjercicios.addEventListener("change", function() {
 
         listaEjercicios.addEventListener("change", function(){
             resultado.textContent = "";
+            let val = listaEjercicios.value;
             form.reset();
+            listaEjercicios.value = val;
         })
     }
 
@@ -99,7 +105,9 @@ listaEjercicios.addEventListener("change", function() {
 
         listaEjercicios.addEventListener("change", function(){
             resultado.textContent = "";
+            let val = listaEjercicios.value;
             form.reset();
+            listaEjercicios.value = val;
         })
     }
 })
