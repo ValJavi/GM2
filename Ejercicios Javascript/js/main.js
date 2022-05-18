@@ -5,6 +5,9 @@ const input = document.querySelector('#input');
 const inputContainer = document.querySelector('#form__input-container');
 const instrucciones = document.querySelector('#instrucciones');
 const resultado = document.querySelector('#resultado');
+const input2Container = document.querySelector('#input-2');
+const input2 = document.createElement('input');
+const input2Instrucciones = document.createElement('p');
 
 
 function filtrarArray(string){
@@ -20,21 +23,23 @@ function filtrarArray(string){
     return newArray;
 }
 
+function agregarInput2(){
+    input2Container.style = "margin: 20px 0"
+    input2.id = "input2";
+    input2.style = "width: 100%";
+    input2Instrucciones.textContent = "Ingresa el numero sobre el que deseas hacer el calculo";
+    input2Container.appendChild(input2Instrucciones);
+    input2Container.appendChild(input2);
+}
+
 listaEjercicios.addEventListener("change", function() {
     if (listaEjercicios.value === "suma-resta") {
         
         let array = [];
         instrucciones.innerHTML = "Ingresa un array";
-              
-        const input2Container = document.querySelector('#input-2');
-        input2Container.style = "margin: 20px 0"
-        const input2 = document.createElement('input');
-        input2.id = "input2";
-        input2.style = "width: 100%";
-        const input2Instrucciones = document.createElement('p');
-        input2Instrucciones.textContent = "Ingresa el numero sobre el que deseas hacer el calculo";
-        input2Container.appendChild(input2Instrucciones);
-        input2Container.appendChild(input2);
+        
+        agregarInput2();
+        
         
         form.addEventListener("submit", function(event) {
             event.preventDefault();
@@ -75,6 +80,9 @@ listaEjercicios.addEventListener("change", function() {
             let val = listaEjercicios.value;
             form.reset();
             listaEjercicios.value = val;
+            if (val === "suma-resta"){
+                agregarInput2();
+            }
         })
     }
 
@@ -92,6 +100,9 @@ listaEjercicios.addEventListener("change", function() {
             let val = listaEjercicios.value;
             form.reset();
             listaEjercicios.value = val;
+            if (val === "suma-resta"){
+                agregarInput2();
+            }
         })
     }
 
@@ -108,6 +119,9 @@ listaEjercicios.addEventListener("change", function() {
             let val = listaEjercicios.value;
             form.reset();
             listaEjercicios.value = val;
+            if (val === "suma-resta"){
+                agregarInput2();
+            }
         })
     }
 })
