@@ -25,7 +25,7 @@ function filtrarArray(string){
 
 function agregarInput2(){
     input2Container.style = "margin: 20px 0"
-    input2.id = "input2";
+    input2.className = "input2";
     input2.style = "width: 100%";
     input2Instrucciones.textContent = "Ingresa el numero sobre el que deseas hacer el calculo";
     input2Container.appendChild(input2Instrucciones);
