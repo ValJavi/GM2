@@ -49,8 +49,9 @@ listaEjercicios.addEventListener("change", function() {
         })    
 
         listaEjercicios.addEventListener("change", function(){
-            input2Container.removeChild(input2);
-            input2Container.removeChild(input2Instrucciones);
+            while(input2Container.firstChild){
+                input2Container.removeChild(input2Container.firstChild);
+            }
             resultado.textContent = "";
             form.reset();
         })
